@@ -1,2 +1,2 @@
 # MemoT
-A experimental memory agent.
+An experimental memory agent demo.
