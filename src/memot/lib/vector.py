@@ -2,10 +2,11 @@ from abc import ABCMeta, abstractmethod
 from typing import Any, Final, Self, overload
 from uuid import UUID
 
+from pydantic import BaseModel
 from qdrant_client import AsyncQdrantClient
 from qdrant_client.http import models as qdrant_models
 
-from ..base import AuditMixin, BaseSchema
+from ..base import AuditMixin
 from .embed import Embedder
 
 __all__ = (
@@ -16,7 +17,9 @@ __all__ = (
 QDRANT_OP_TIMEOUT: Final[int] = 30
 
 
-class VectorCollection(BaseSchema):
+class VectorCollection(BaseModel):
+    """Configuration for a Qdrant vector collection."""
+
     collection_name: str
     vectors_config: qdrant_models.VectorParams | dict[str, qdrant_models.VectorParams] | None = None
     sparse_vectors_config: dict[str, qdrant_models.SparseVectorParams] | None = None
@@ -55,7 +58,7 @@ class VectorStoreMixin(AuditMixin, kw_only=True, metaclass=ABCMeta):
         ):
             return
 
-        await client.create_collection(**collection.to_dict())
+        await client.create_collection(**collection.model_dump())
 
     @overload
     @classmethod
