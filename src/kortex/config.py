@@ -19,7 +19,7 @@ BASE_DIR: Final[Path] = Path.cwd()
 
 
 class ServerConfig(BaseSchema):
-    """Configuration for the MemoT server."""
+    """Configuration for the Kortex server."""
 
     host: str = field(default="127.0.0.1")
     port: int = field(default=8000)
@@ -36,7 +36,7 @@ class OpenAIProviderConfig(BaseSchema):
 
 
 class ApplicationConfig(BaseSchema):
-    """Configuration for the MemoT application."""
+    """Configuration for the Kortex application."""
 
     server: ServerConfig = field(default_factory=ServerConfig)
     openai_providers: list[OpenAIProviderConfig] = field(default=[])

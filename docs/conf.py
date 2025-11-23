@@ -1,4 +1,4 @@
-project = "MemoT"
+project = "Kortex"
 copyright = "2025, Ahsen"
 author = "Ahsen"
 
@@ -46,8 +46,8 @@ mermaid_init_js = """
 """
 
 # Open Graph配置
-ogp_site_url = "https://your-username.github.io/MemoT/"
-ogp_description = "MemoT - An experimental memory agent demo"
+ogp_site_url = "https://your-username.github.io/kortex/"
+ogp_description = "Kortex - An experimental memory agent demo"
 ogp_image = ""
 
 tippy_enable_auto_dark_mode = True
@@ -59,6 +59,6 @@ templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "shibuya"
-html_title = "memot"
+html_title = "kortex"
 html_static_path = ["_static"]
 html_css_files = ["style.css"]

@@ -866,7 +866,7 @@ wheels = [
 ]
 
 [[package]]
-name = "memot"
+name = "kortex"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

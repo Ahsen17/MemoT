@@ -1,6 +1,6 @@
 [project]
 authors = [{ name = "Ahsen17", email = "ahsenedward@qq.com" }]
-name = "memot"
+name = "kortex"
 version = "0.1.0"
 description = "An experimental memory agent."
 readme = "README.md"
